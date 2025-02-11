@@ -1,25 +1,23 @@
 hidden pmtiles = "pmtiles://https://data.source.coop/smartmaps/next-ksj/N03-20240101.pmtiles"
 hidden layer = "N03-20240101"
-hidden key = "全国地方公共団体コード"
-hidden value = "08220"
+hidden key = "市区町村名"
+hidden values = new Listing { "つくば市" "府中市" }
 
 version = 8
 center = new Listing {
-  135
-  35
+  136.5
+  32
 }
-zoom = 6
-pitch = 60
-bearing = -178.6
+zoom = 3.81
+pitch = 32
+bearing = -23.8
 sources {
   a { type = "vector" url = pmtiles attribution = "next-ksj / MLIT" }
 }
 layers = new Listing {
   new {
     id = "background" type = "background"
-    paint {
-      `background-color` = "#000"
-    }
+    paint { `background-color` = "#000" }
   }
   new {
     id = layer type = "fill" source = "a"
@@ -28,7 +26,7 @@ layers = new Listing {
       `fill-color` = new Listing {
         "match"
         new Listing { "get" key }
-        value "#0f0"
+        values "#0f0"
         "#888"
       } 
     }

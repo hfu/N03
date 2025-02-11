@@ -18,6 +18,7 @@ const map = new maplibregl.Map({
 })
 map.addControl(new maplibregl.NavigationControl())
 map.addControl(new maplibregl.GlobeControl())
+map.on('style.load', () => { map.setProjection({ type: 'globe' }) })
 </script>
 </body>
 </html>
