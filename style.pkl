@@ -1,0 +1,36 @@
+hidden pmtiles = "pmtiles://https://data.source.coop/smartmaps/next-ksj/N03-20240101.pmtiles"
+hidden layer = "N03-20240101"
+hidden key = "全国地方公共団体コード"
+hidden value = "08220"
+
+version = 8
+center = new Listing {
+  135
+  35
+}
+zoom = 6
+pitch = 60
+bearing = -178.6
+sources {
+  a { type = "vector" url = pmtiles attribution = "next-ksj / MLIT" }
+}
+layers = new Listing {
+  new {
+    id = "background" type = "background"
+    paint {
+      `background-color` = "#000"
+    }
+  }
+  new {
+    id = layer type = "fill" source = "a"
+    `source-layer` = layer
+    paint {
+      `fill-color` = new Listing {
+        "match"
+        new Listing { "get" key }
+        value "#0f0"
+        "#888"
+      } 
+    }
+  }
+}

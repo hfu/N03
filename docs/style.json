@@ -1,0 +1,44 @@
+{
+  "version": 8,
+  "center": [
+    135,
+    35
+  ],
+  "zoom": 6,
+  "pitch": 60,
+  "bearing": -178.6,
+  "sources": {
+    "a": {
+      "type": "vector",
+      "url": "pmtiles://https://data.source.coop/smartmaps/next-ksj/N03-20240101.pmtiles",
+      "attribution": "next-ksj / MLIT"
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "#000"
+      }
+    },
+    {
+      "id": "N03-20240101",
+      "type": "fill",
+      "source": "a",
+      "source-layer": "N03-20240101",
+      "paint": {
+        "fill-color": [
+          "match",
+          [
+            "get",
+            "全国地方公共団体コード"
+          ],
+          "08220",
+          "#0f0",
+          "#888"
+        ]
+      }
+    }
+  ]
+}
